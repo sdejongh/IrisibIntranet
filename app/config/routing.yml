@@ -2,6 +2,3 @@ irisib_intranet:
     resource: "@IrisibIntranetBundle/Resources/config/routing.yml"
     prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
