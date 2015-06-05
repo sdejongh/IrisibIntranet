@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8" />
+        <title>IRISIB Intranet - {% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/irisibintranet/css/bootstrap/css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/irisibintranet/css/font-awesome/css/font-awesome.min.css') }}" />
+        {% endblock stylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block header %}{% endblock %}
+        {% block menubar %}{% endblock %}
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+            {% block body %}{% endblock %}
+        </div>
+        <div class="col-xs-1"></div>
+        {% block footer %}{% endblock %}
+        {% block javascripts %}
+            <script src="//code.jquery.com/jquery.min.js"></script>
+            <script src="{{ asset('bundles/irisibintranet/css/bootstrap/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+
+    </body>
+</html>
+
+
+
+

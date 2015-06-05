@@ -1,0 +1,3 @@
+irisib_intranet_department_listt:
+    path:     /
+    defaults: { _controller: IrisibIntranetBundle:Department:list }

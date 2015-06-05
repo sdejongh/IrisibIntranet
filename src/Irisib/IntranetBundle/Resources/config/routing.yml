@@ -1,0 +1,7 @@
+irisib_intranet_homepage:
+    path:     /
+    defaults: { _controller: IrisibIntranetBundle:Default:index }
+
+irisib_intranet_department:
+    prefix:   /department
+    resource: "@IrisibIntranetBundle/Resources/config/routing/department.yml"

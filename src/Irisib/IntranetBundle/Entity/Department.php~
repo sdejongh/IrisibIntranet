@@ -1,0 +1,32 @@
+<?php
+
+namespace Irisib\IntranetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Department")
+ * @ORM\Entity(repositoryClass="DepartmentRepository");
+ */
+
+class Department {
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=8)
+     */
+    protected $shortname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $fullname;
+
+}

@@ -1,0 +1,4 @@
+services:
+#    irisib_intranet.example:
+#        class: Irisib\IntranetBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
