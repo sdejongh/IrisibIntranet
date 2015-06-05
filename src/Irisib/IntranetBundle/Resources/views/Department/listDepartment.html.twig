@@ -26,14 +26,16 @@
                             <td>{{ department.fullname }}</td>
                             <td>
                                 <button type="button" class="btn btn-warning"><i class="fa fa-edit fa-fw"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fa fa-remove fa-fw"></i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dep_del_{{ department.id }}"><i class="fa fa-remove fa-fw"></i></button>
+                                {{ render(controller( 'IrisibIntranetBundle:Department:deleteForm', { 'id': department.id } )) }}
                             </td>
                         </tr>
                     {% endfor %}
                     </tbody>
 
                 </table>
-                <button type="button" class="btn btn-success"><i class="fa fa-plus-square fa-fw"></i> Nouveau département</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dep_new"><i class="fa fa-plus-square fa-fw"></i> Nouveau département</button>
+
             </div>
             <div class="col-sm-4">
                 <p class="text-info text-justify">

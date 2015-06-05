@@ -1,0 +1,20 @@
+<div class="modal fade" id="dep_new" tabindex="-1" role="dialog" aria-labelledby="newModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            {{ form_start(form) }}
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Nouveu Département</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">{{ form_label(form.shortname) }} {{ form_widget(form.shortname) }}</div>
+                <div class="row">{{ form_label(form.fullname) }} {{ form_widget(form.fullname) }}</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-success">Confirmer</button>
+            </div>
+            {{ form_end(form) }}
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
