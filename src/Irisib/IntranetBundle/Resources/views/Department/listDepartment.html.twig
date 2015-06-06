@@ -10,7 +10,6 @@
         </div>
         <div class="row">
             <div class="col-sm-8">
-
                 <table class="table table-responsive table-striped">
                     <thead>
                     <th>ID</th>
@@ -19,6 +18,7 @@
                     <th>Actions</th>
                     </thead>
                     <tbody>
+
                     {% for department in departments %}
                         <tr>
                             <td>{{ department.id }}</td>
@@ -35,7 +35,7 @@
 
                 </table>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dep_new"><i class="fa fa-plus-square fa-fw"></i> Nouveau département</button>
-
+                {{ render(controller( 'IrisibIntranetBundle:Department:new', { } )) }}
             </div>
             <div class="col-sm-4">
                 <p class="text-info text-justify">

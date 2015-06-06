@@ -7,11 +7,7 @@ department_delete:
     defaults: { _controller: "IrisibIntranetBundle:Department:delete" }
     methods:  [POST, DELETE]
 
-department_new:
-    path:     /new
-    defaults: { _controller: "IrisibIntranetBundle:Department:new" }
-
-department_create:
-    path:     /create
+department_add:
+    path:     /add
     defaults: { _controller: "IrisibIntranetBundle:Department:create" }
-    methods:  POST
+    methods:  [POST, PUT]

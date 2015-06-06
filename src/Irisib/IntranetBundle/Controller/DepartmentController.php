@@ -2,6 +2,7 @@
 
 namespace Irisib\IntranetBundle\Controller;
 
+use Irisib\IntranetBundle\Form\DepartmentType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -22,44 +23,58 @@ class DepartmentController extends Controller
      * DEPARTMENT CREATION *
      ***********************/
 
+    /**
+     * Creates a new Department entity.
+     *
+     */
     public function createAction(Request $request)
     {
-        $department = new Department();
-        $form = $this->createNewForm($department);
+        $entity = new Department();
+        $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($department);
+            $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('department_list'));
+            return $this->redirect($this->generateUrl('department_list', array('id' => $entity->getId())));
         }
 
         return $this->render('IrisibIntranetBundle:Department:formNewDepartment.html.twig', array(
-            'department' => $department,
+            'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
-    private function createNewForm(Department $department)
+    /**
+     * Creates a form to create a Department entity.
+     *
+     * @param Department $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(Department $entity)
     {
-        $form = $this->createForm(new Department(), $department, array(
-            'action' => $this->generateUrl('department_create'),
+        $form = $this->createForm(new DepartmentType(), $entity, array(
+            'action' => $this->generateUrl('department_add'),
             'method' => 'POST',
         ));
 
         return $form;
     }
 
-
+    /**
+     * Displays a form to create a new Department entity.
+     *
+     */
     public function newAction()
     {
-        $department = new Department();
-        $form   = $this->createNewForm($department);
+        $entity = new Department();
+        $form   = $this->createCreateForm($entity);
 
         return $this->render('IrisibIntranetBundle:Department:formNewDepartment.html.twig', array(
-            'entity' => $department,
+            'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
