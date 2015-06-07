@@ -1,13 +1,13 @@
-department_list:
+irisib_department_list:
     path:     /
     defaults: { _controller: IrisibIntranetBundle:Department:list }
 
-department_delete:
+irisib_department_delete:
     path:     /{id}/delete
     defaults: { _controller: "IrisibIntranetBundle:Department:delete" }
     methods:  [POST, DELETE]
 
-department_add:
+irisib_department_add:
     path:     /add
     defaults: { _controller: "IrisibIntranetBundle:Department:create" }
     methods:  [POST, PUT]

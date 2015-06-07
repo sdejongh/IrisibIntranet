@@ -38,7 +38,7 @@ class DepartmentController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('department_list', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('irisib_department_list'));
         }
 
         return $this->render('IrisibIntranetBundle:Department:formNewDepartment.html.twig', array(
@@ -57,7 +57,7 @@ class DepartmentController extends Controller
     private function createCreateForm(Department $entity)
     {
         $form = $this->createForm(new DepartmentType(), $entity, array(
-            'action' => $this->generateUrl('department_add'),
+            'action' => $this->generateUrl('irisib_department_add'),
             'method' => 'POST',
         ));
 
@@ -101,14 +101,14 @@ class DepartmentController extends Controller
             $em->flush();
 
         }
-        return $this->redirect($this->generateUrl('department_list'));
+        return $this->redirect($this->generateUrl('irisib_department_list'));
 
     }
 
     public function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('department_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('irisib_department_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->getForm()
             ;
