@@ -25,7 +25,8 @@
                             <td>{{ department.shortname }}</td>
                             <td>{{ department.fullname }}</td>
                             <td>
-                                <button type="button" class="btn btn-warning"><i class="fa fa-edit fa-fw"></i></button>
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#dep_update_{{ department.id }}"><i class="fa fa-edit fa-fw"></i></button>
+                                {{ render(controller( 'IrisibIntranetBundle:Department:updateForm', { 'id': department.id } )) }}
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dep_del_{{ department.id }}"><i class="fa fa-remove fa-fw"></i></button>
                                 {{ render(controller( 'IrisibIntranetBundle:Department:deleteForm', { 'id': department.id } )) }}
                             </td>
@@ -39,7 +40,7 @@
             </div>
             <div class="col-sm-4">
                 <p class="text-info text-justify">
-                    <i class="fa fa-info-circle fa-5x pull-left "></i>{% include('IrisibIntranetBundle:Default:lorem.html.twig') %}
+                    <i class="fa fa-info-circle fa-5x pull-left "></i>{% include('IrisibIntranetBundle:Department:infoDepartment.html.twig') %}
                 </p>
             </div>
         </div>

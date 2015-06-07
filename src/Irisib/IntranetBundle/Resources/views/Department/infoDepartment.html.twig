@@ -1,0 +1,14 @@
+<h3>Département</h3>
+<p class="text-justify">Objet permettant la création de relations entre divers éléments (bons de commande, factures, ...) et le département associé.
+La création ou la modification d'un département n'affecte en rien les éléments déjà existants. Par contre, la suppression d'un
+    département entraine de lourdes modifications de tous les éléments qui y étaient associés. Ceux-ci seront alors associés par
+    défaut au premier département disponible. Si il n'existe aucun département, les objets seront ourement et simplements détruits.
+</p>
+<dl>
+    <dt>ID</dt>
+    <dd>Identifiant du département dans la base de donnée (généré automatiquement).</dd>
+    <dt>Acronyme</dt>
+    <dd>Nom "abrégé" du département, utilisé entre autre dans la génération des numéros de bons de commande.</dd>
+    <dt>Nom complet</dt>
+    <dd>Nom exact et entier du département.</dd>
+</dl>

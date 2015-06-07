@@ -79,6 +79,61 @@ class DepartmentController extends Controller
         ));
     }
 
+    /********************
+     * UPDATE FUNCTIONS *
+     ********************/
+
+    public function updateAction(Request $request, $id)
+    {
+        $form = $this->createUpdateForm($id);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('IrisibIntranetBundle:Department')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Department entity.');
+            }
+
+            $em->persist($entity);
+            $em->flush();
+
+        }
+        return $this->redirect($this->generateUrl('irisib_department_list'));
+
+    }
+
+    private function createUpdateForm($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('IrisibIntranetBundle:Department')->find($id);
+
+
+        $form = $this->createForm(new DepartmentType(), $entity, array(
+            'action' => $this->generateUrl('irisib_department_update', array('id' => $id)),
+            'method' => 'POST',
+        ));
+
+        return $form;
+    }
+
+    public function updateFormAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $department = $em->getRepository('IrisibIntranetBundle:Department')->find($id);
+        $updateForm = $this->createUpdateForm($id);
+
+        return $this->render('IrisibIntranetBundle:Department:formUpdateDepartment.html.twig',
+            array(
+                'form' => $updateForm->createView(),
+                'id' => $id,
+                'name' => $department->getFullname(),
+
+            )
+        );
+    }
+
 
 
     /********************

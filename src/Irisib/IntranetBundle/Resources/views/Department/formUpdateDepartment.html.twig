@@ -1,0 +1,34 @@
+<div class="modal fade" id="dep_update_{{ id }}" tabindex="-1" role="dialog" aria-labelledby="newModelLabel" aria-hidden="true">
+    {{ form_start(form) }}
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modifier un département</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-1">&nbsp;</div>
+                        <div class="col-xs-3">{{ form_label(form.shortname) }}</div>
+                        <div class="col-xs-7">{{ form_widget(form.shortname) }}</div>
+                        <div class="col-xs-1">&nbsp;</div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-xs-1">&nbsp;</div>
+                        <div class="col-xs-3">{{ form_label(form.fullname) }}</div>
+                        <div class="col-xs-7">{{ form_widget(form.fullname) }}</div>
+                        <div class="col-xs-1">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-success">Confirmer</button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    {{ form_end(form) }}
+</div>
