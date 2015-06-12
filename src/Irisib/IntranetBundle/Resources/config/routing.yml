@@ -5,3 +5,7 @@ irisib_intranet_homepage:
 irisib_intranet_department:
     prefix:   /department
     resource: "@IrisibIntranetBundle/Resources/config/routing/department.yml"
+
+irisib_intranet_vendorcategory:
+    prefix:   /vendorcategory
+    resource: "@IrisibIntranetBundle/Resources/config/routing/vendorcategory.yml"
