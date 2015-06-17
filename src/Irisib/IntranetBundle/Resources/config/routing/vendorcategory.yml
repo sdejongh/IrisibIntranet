@@ -1,3 +1,13 @@
 irisib_vendorcategory_list:
     path:     /
     defaults: { _controller: IrisibIntranetBundle:VendorCategory:list }
+
+irisib_vendorcategory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IrisibIntranetBundle:VendorCategory:delete" }
+    methods:  [POST, DELETE]
+
+irisib_vendorcategory_add:
+    path:     /add
+    defaults: { _controller: "IrisibIntranetBundle:VendorCategory:create" }
+    methods:  [POST, PUT]

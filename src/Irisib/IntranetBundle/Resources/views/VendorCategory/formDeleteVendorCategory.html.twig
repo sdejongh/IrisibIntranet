@@ -1,0 +1,23 @@
+<div class="modal fade" id="vendorcategory_del_{{ id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    {{ form_start(delete_form) }}
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Suppression du département</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger text-center"><i class="fa fa-warning fa-5x"></i></p>
+                <p>
+                    La supression de la catégorie <strong>{{ name }}</strong> (id: {{ id }}) n'entraînera pas la supression des fournisseurs associés.
+                    Toutefois, ceux-ci ne pourront plus être frecherchés par le biais de cette catégorie. Cette opération est <strong>irréversible</strong>!
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-success">Confirmer</button>
+            </div>
+        </div>
+    </div>
+    {{ form_end(delete_form) }}
+</div>
